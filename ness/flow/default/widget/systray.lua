@@ -1,0 +1,8 @@
+
+-- Default AwesomeMW systray widget
+
+local wibox = require("wibox")
+
+-------------------------------------------
+
+return wibox.widget.systray()
