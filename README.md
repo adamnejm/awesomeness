@@ -1,4 +1,4 @@
-**Awesome/Ness** is a redesigned configuration workflow for the [Awesome](https://github.com/awesomeWM/awesome/)  
+**Awesome/Ness** is a redesigned configuration workflow for [Awesome](https://github.com/awesomeWM/awesome/)  
 
 &nbsp;  
 
