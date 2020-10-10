@@ -138,7 +138,7 @@ return {
 	combo_convert = true,
 	
 	-- * Include app specific keybinds in the keybind widget (doesn't functionally affect the hotkeys)
-	app_hotkeys = false,
+	app_hotkeys = true,
 	
 	-- List of possible modifiers, `false` values will also override the default `awful` ignores
 	allowed_modifiers = {
