@@ -20,24 +20,6 @@
 
 
 
---[[
-	
-	Awesome/Ness is a redesigned configuration workflow for Awesome
-	
-	TODO:
-	- Flow system
-		Drag and drop system for configurations
-		
-	- Non-intrusive libraries
-		You're in control, no behind the scenes function calls
-		
-	- Stock configuration example (this)
-	- Custom configuration example
-	
-]]
-
-
-
 -------------------------------------------
 -- LIBRARIES
 -------------------------------------------
@@ -49,7 +31,7 @@ pcall(require, "luarocks.loader")
 local gears		= require("gears")				-- Utility stuff
 local awful		= require("awful")				-- General purpose
 local wibox		= require("wibox")				-- Widgets, drawables and such
--- local beautiful	= require("beautiful")		-- Theme library
+local beautiful	= require("beautiful")			-- Theme library
 
 require("awful.autofocus")
 
