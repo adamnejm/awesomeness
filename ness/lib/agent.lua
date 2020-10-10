@@ -1,10 +1,8 @@
 
--- local config = require("config", true)
-local config = require("ness/lib/flower").require("config", true)
-
-local util = require("ness/lib/util")
-local awful = require("awful")
-local beautiful = require("beautiful")
+local config	= require("config", true)
+local util		= require("ness/lib/util")
+local awful		= require("awful")
+local beautiful	= require("beautiful")
 
 -- Handles various client-related stuff, like spawn management or titlebars 
 local agent = {}

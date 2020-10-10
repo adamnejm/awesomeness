@@ -1,10 +1,8 @@
 
--- local config = require("config", true)
-local config = require("ness/lib/flower").require("config", true)
-
-local util = require("ness/lib/util")
-local bind = require("ness/lib/bind")
-local awful = require("awful")
+local config	= require("config", true)
+local util		= require("ness/lib/util")
+local bind		= require("ness/lib/bind")
+local awful		= require("awful")
 
 
 -- Library responsible for configuration and comatibility (to ease using 3rd party modules)

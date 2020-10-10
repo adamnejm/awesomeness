@@ -1,10 +1,8 @@
 
--- local config = require("config", true)
-local config = require("ness/lib/flower").require("config", true)
-
-local awful = require("awful")
-local gears = require("gears")
-local util = require("ness/lib/util")
+local config	= require("config", true)
+local awful		= require("awful")
+local gears		= require("gears")
+local util		= require("ness/lib/util")
 
 
 -- Manages screens and tags

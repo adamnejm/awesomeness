@@ -1,11 +1,9 @@
 
--- local config = require("config", true)
-local config = require("ness/lib/flower").require("config", true)
-
-local util = require("ness/lib/util")
-local rules = require("ness/lib/rules")
-local awful = require("awful")
-local gears = require("gears")
+local config	= require("config", true)
+local util		= require("ness/lib/util")
+local rules		= require("ness/lib/rules")
+local awful		= require("awful")
+local gears		= require("gears")
 
 
 -- Less convoluted way to manage keys and buttons
