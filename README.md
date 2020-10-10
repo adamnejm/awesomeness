@@ -1,11 +1,11 @@
-**Awesome/Ness** is a redesigned configuration workflow for the [Awesome](https://github.com/awesomeWM/awesome/)  
+**Awesome/Ness** is a redesigned configuration workflow for [Awesome](https://github.com/awesomeWM/awesome/)  
 
 &nbsp;  
 
 ## Features
   
 - **Flow system**  
-	Easily create your own configurations by using the fallback system or by borrowing files from other configurations  
+	Use other configurations as a base for your own one by using the fallback system or directly borrowing files  
 	
 - **Non-intrusive libraries**  
 	Included libraries will run when you tell them to run, no behind the scenes bullshit, you're always in control  
