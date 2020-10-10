@@ -1,7 +1,7 @@
 
 -- Default Awesome menubar widget
 
-local config = require("config")
+local config = require("config", true)
 
 -------------------------------------------
 

@@ -1,7 +1,7 @@
 
 -- Default AwesomeWM global keys
 
-local config = require("config")
+local config = require("config", true)
 local bind = require("ness/lib/bind")
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")

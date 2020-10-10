@@ -1,7 +1,7 @@
 
 -- Default AwesomeWM global keys related to tags
 
-local config = require("config")
+local config = require("config", true)
 local bind = require("ness/lib/bind")
 local awful = require("awful")
 
