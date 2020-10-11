@@ -15,7 +15,7 @@ Completely redesigned configuration workflow for [AwesomeWM](https://github.com/
 	Comes with default configuration which is meant to imitate the stock AwesomeWM experience  
 	
 - **Simplified runtime configuration**  
-	Forget clutter of default Awesome's `rc.lua` without losing any control  
+	Forget clutter of default Awesome's `rc.lua` and stay in control of your system  
 	
 - **Static configuration**  
 	Just tweak a value in your `config.lua` and you're done!  
