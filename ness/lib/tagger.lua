@@ -69,17 +69,6 @@ function tagger.createTags(scr)
 	end
 end
 
---- Returns the awful's taglist widget
--- @param scr Screen to get the widget for
--- @param buttons List of buttons to use for this widget
-function tagger.getTaglist(scr, buttons)
-	return awful.widget.taglist {
-		screen  = scr,
-		filter  = scr.cfg.tag_filter or awful.widget.taglist.filter.all,
-		buttons = buttons,
-	}
-end
-
 -------------------------------------------
 
 return tagger
