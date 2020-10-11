@@ -15,7 +15,7 @@ Completely redesigned configuration workflow for [AwesomeWM](https://github.com/
 	Comes with default configuration which is meant to imitate the stock AwesomeWM experience
 	
 - **Static configuration**  
-	Make quick tweaks never have been easier, just change the value and Awesome/Ness will take care of the rest
+	Just tweak a value in your `config.lua` and you're done!
 
 &nbsp;  
 
