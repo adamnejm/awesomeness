@@ -68,8 +68,8 @@ return {
 					-- String name for this tag or `nil` to use it's index
 					name = nil,
 					
-					-- TODO: Bind actuator for this tag or `nil` to use it's index
-					-- actuator = nil,
+					-- Bind actuator for this tag or `nil` to use it's index with this formula: `#..(tag_index + 9)`
+					actuator = nil,
 					
 					-- Path to icon for this tag (example `awful.tag` property)
 					icon = nil,
@@ -152,5 +152,17 @@ return {
 		["Mod2"]	= false,
 		["Lock"]	= false,
 	},
+	
+	-- Combo to switch to tag, `%s` will be replaced with specified `actuator` key in tag definition or `#..(tag_index + 9)`
+	tag_view_combo = "Mod + %s",
+	
+	-- Combo to move client to tag, 〃ditto
+	tag_move_combo = "Mod + Shift + %s",
+	
+	-- Combo to toggle tag, 〃ditto
+	tag_toggle_combo = "Mod + Control + %s",
+	
+	-- Combo to merge client to tag, 〃ditto
+	tag_toggle_client_combo = "Mod + Control + Shift + %s",
 	
 }

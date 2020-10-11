@@ -102,6 +102,9 @@ awful.screen.connect_for_each_screen(function(scr)
 	-- Create tags for this screen
 	tagger.createTags(scr)
 	
+	-- Let `bind` library handle all of the tag binds
+	bind.generateTagKeys(scr)
+	
 	-- Screen's widgets
 	scr.prompt		= require("widget/prompt")()
 	scr.wibar		= require("widget/wibar")(scr)
@@ -174,8 +177,6 @@ end)
 -------------------------------------------
 -- BIND
 -------------------------------------------
-
-require("bind/tag_keys")
 
 require("bind/client_keys")
 require("bind/client_buttons")

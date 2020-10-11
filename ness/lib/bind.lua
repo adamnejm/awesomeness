@@ -226,6 +226,85 @@ function bind.getButtons(data)
 	return gears.table.join(table.unpack(new_btns))
 end
 
+
+
+-------------------------------------------
+-- TAG KEYS
+-------------------------------------------
+
+local tag_controls = {
+	{
+		combo	= config.tag_view_combo or "Mod + %s",
+		desc	= "View tag",
+		press	= function(tag)
+			tag:view_only()
+		end,
+	},{
+		combo	= config.tag_move_combo or "Mod + Shift + %s",
+		desc	= "Move client to tag",
+		press	= function(tag)
+			client.focus:move_to_tag(tag)
+			if config.follow_clients then
+				tag:view_only()
+			end
+		end,
+	},{
+		combo	= config.tag_toggle_combo or "Mod + Control + %s",
+		desc	= "Toggle tag",
+		press	= function(tag)
+			awful.tag.viewtoggle(tag)
+		end
+	},{
+		combo	= config.tag_toggle_client_combo or "Mod + Control + Shift + %s",
+		desc	= "Merge client to tag",
+		press	= function(tag)
+			client.focus:toggle_tag(tag)
+		end
+	}
+}
+
+local screen_tag_actuators = {}
+local registered_tag_combos = {}
+
+function bind.generateTagKeys(scr)
+	
+	-- Lookup table
+	screen_tag_actuators[scr] = {}
+	for _, tag in ipairs(scr.tags) do
+		local actuator = tag.actuator or "#"..tag.index+9
+		screen_tag_actuators[scr][actuator] = tag
+	end
+	
+	-- All tags of the provided screen
+	for _, scr_tag in ipairs(scr.tags) do
+		local actuator = scr_tag.actuator or "#"..scr_tag.index+9
+		
+		-- Basic tag control functions
+		for _, tag_control in ipairs(tag_controls) do
+			local combo = string.format(tag_control.combo, actuator)
+			if not registered_tag_combos[combo] then
+				
+				bind.globalKey {
+					combo	= combo,
+					desc	= tag_control.desc,
+					group	= "Tag",
+					press	= function()
+						local screen = awful.screen.focused()
+						local tag = screen_tag_actuators[screen][actuator]
+						if tag then
+							tag_control.press(tag)
+						end
+					end,
+				}
+				
+				registered_tag_combos[combo] = true
+			end
+		end
+		
+	end
+	
+end
+
 -------------------------------------------
 
 return bind
