@@ -12,10 +12,13 @@ Completely redesigned configuration workflow for [AwesomeWM](https://github.com/
 	Included libraries will run when you tell them to run, no behind the scenes bullshit, you're always in control  
 	
 - **Stock configuration**  
-	Comes with default configuration which is meant to imitate the stock AwesomeWM experience
+	Comes with default configuration which is meant to imitate the stock AwesomeWM experience  
+	
+- **Simplified runtime configuration**
+	Forget clutter of default Awesome's `rc.lua` without losing any control
 	
 - **Static configuration**  
-	Just tweak a value in your `config.lua` and you're done!
+	Just tweak a value in your `config.lua` and you're done!  
 
 &nbsp;  
 
