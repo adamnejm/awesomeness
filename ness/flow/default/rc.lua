@@ -135,8 +135,8 @@ awful.screen.connect_for_each_screen(function(scr)
 	
 end)
 
-screen.connect_signal("removed", function(scr)
-	-- Reset wallpapers on remaining screens
+screen.connect_signal("list", function()
+	-- Sometimes XRandR can mess up wallpapers, so reset them
 	for s in screen do
 		tagger.setWallpaper(s)
 	end
