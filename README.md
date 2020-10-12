@@ -48,11 +48,12 @@ bind.clientKeys {
 ```
 
 ### Screens, tags and clients
-With the combination of static configuration, `tagger` and `agent` libraries you can easily configure screens, tags and manage clients
+With the combination of static configuration, `tagger` and `agent` libraries you can easily configure screens, create tags, set wallpapers and manage where clients spawn
 
 <sub>[config.lua](https://github.com/adamnejm/awesomeness/blob/master/ness/flow/default/config.lua):</sub>
 ```lua
 ["HDMI"] = {
+  wallpaper = "background.png",
   tag_filter = awful.widget.taglist.filter.all,
   tag_count = 9,
   tags = {
@@ -68,6 +69,7 @@ With the combination of static configuration, `tagger` and `agent` libraries you
 ```lua
 awful.screen.connect_for_each_screen(function(scr)
 	tagger.setupScreenConfig(scr)
+  tagger.setWallpaper(scr)
 	tagger.createTags(scr)
 end)
 
