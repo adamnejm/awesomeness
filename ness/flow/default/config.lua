@@ -44,8 +44,25 @@ return {
 		-- Index or first matching character's of the head's XRandR name, `*` can be used as a default for unidentified screens
 		["*"] = {
 			
-			-- TODO: Path to wallpaper for this screen
-			-- wallpaper = "",
+			-- Path to wallpaper for this screen, can be a global path or path relative to theme folder or it's `wallpaper` folder
+			wallpaper = "background.png",
+			
+			-- Wallpaper mode, can be `centered`, `maximized` `tiled` or `fit`, if `nil`, `centered` will be used
+			wallpaper_mode = "centered",
+			
+			-- Background behind the wallpaper, only applicable for `centered` and `fit` modes, `#000000` if `nil`
+			wallpaper_background = nil,
+			
+			-- Scale of the wallpaper, only applicable for `centered` mode, `1` if `nil`
+			wallpaper_scale = nil,
+			
+			-- Wallpaper's offsets (a table with `x` and `y` keys), only applicable for `maximized` and `tiled` modes
+			wallpaper_offset = nil,
+			
+			-- Whether to ignore wallpaper's aspect ratio, only applicable for `maximized` mode, `true` if `nil`
+			wallpaper_ignore_aspect = nil,
+			
+			
 			
 			-- Awful taglist filter, possible keys: `all`, `noempty`, `selected`, defaults to `all` if not set
 			tag_filter = awful.widget.taglist.filter.all,

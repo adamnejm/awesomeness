@@ -1,5 +1,7 @@
 
 local config	= require("config", true)
+local flower	= require("ness/lib/flower")
+local gfs		= require("gears.filesystem")
 local awful		= require("awful")
 local gears		= require("gears")
 local util		= require("ness/lib/util")
@@ -39,6 +41,45 @@ function tagger.setupScreenConfig(scr)
 	
 	-- Default or empty config
 	scr.cfg = config.screens["*"] or {}
+end
+
+--- Sets wallpaper for the screen based on the static configuration
+function tagger.setWallpaper(scr)
+	local wallpaper = scr.cfg.wallpaper
+	if not wallpaper then return end
+	
+	local path
+	if gfs.file_readable(wallpaper) then
+		-- Check if path is global
+		path = wallpaper
+	elseif gfs.file_readable(flower.getThemeDir().."wallpaper/"..wallpaper) then
+		-- Check if path is local to `theme/wallpaper/`
+		path = flower.getThemeDir().."wallpaper/"..wallpaper
+	elseif gfs.file_readable(flower.getThemeDir()..wallpaper) then
+		-- Additionally check relative to base theme directory
+		path = flower.getThemeDir()..wallpaper
+	end
+	
+	log(path, wallpaper)
+	
+	if path then
+		local mode = scr.cfg.wallpaper_mode or "centered"
+		
+		local scale = scr.cfg.wallpaper_scale or 1
+		local offset = scr.cfg.wallpaper_offset
+		local no_aspect = util.getFirstDefined(scr.cfg.wallpaper_ignore_aspect, true)
+		local background = scr.cfg.wallpaper_background or "#000000"
+		
+		if mode == "centered" then
+			gears.wallpaper.centered(path, scr, background, scale)
+		elseif mode == "maximized" then
+			gears.wallpaper.maximized(path, scr, no_aspect, offset)
+		elseif mode == "tiled" then
+			gears.wallpaper.tiled(path, scr, offset)
+		elseif mode == "fit" then
+			gears.wallpaper.fit(path, scr, background)
+		end
+	end
 end
 
 

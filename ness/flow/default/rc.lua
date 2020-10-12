@@ -102,6 +102,9 @@ awful.screen.connect_for_each_screen(function(scr)
 	-- Create tags for this screen
 	tagger.createTags(scr)
 	
+	-- Set wallpaper based on your static configuration
+	tagger.setWallpaper(scr)
+	
 	-- Let `bind` library handle all of the tag binds
 	bind.generateTagKeys(scr)
 	

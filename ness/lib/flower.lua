@@ -6,6 +6,8 @@ local beautiful = require("beautiful")
 local flower = {
 	initialized = nil,
 	fallback = "default",
+	
+	theme = "default",
 }
 
 -------------------------------------------
@@ -63,11 +65,11 @@ end
 -- THEME
 -------------------------------------------
 
---- Returns path to specified theme directory
+--- Returns path to directory of the specified or currently set theme
 -- @param theme Theme get the path for
 -- @return Path to the theme directory
 function flower.getThemeDir(theme)
-	return flower.getGlobalPath("ness/theme/"..theme.."/")
+	return flower.getGlobalPath("ness/theme/"..(theme or flower.theme).."/")
 end
 
 --- Returns global path to initializing file of the specified theme if it exists, errors otherwise
@@ -101,6 +103,7 @@ end
 -- @param theme Theme directory name located by default in ~/.config/awesome/ness/theme/
 -- @param file Optional file to load, if `nil` it will use `theme.lua`
 function flower.setTheme(theme, file)
+	flower.theme = theme
 	beautiful.init(flower.getThemeFile(theme, file))
 end
 
