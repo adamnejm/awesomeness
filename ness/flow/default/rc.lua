@@ -135,6 +135,13 @@ awful.screen.connect_for_each_screen(function(scr)
 	
 end)
 
+screen.connect_signal("removed", function(scr)
+	-- Reset wallpapers on remaining screens
+	for s in screen do
+		tagger.setWallpaper(s)
+	end
+end)
+
 
 
 -------------------------------------------
