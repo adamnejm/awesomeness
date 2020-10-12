@@ -78,6 +78,7 @@ function tagger.setWallpaper(scr)
 			gears.wallpaper.fit(path, scr, background)
 		end
 	end
+	
 end
 
 
