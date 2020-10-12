@@ -60,8 +60,6 @@ function tagger.setWallpaper(scr)
 		path = flower.getThemeDir()..wallpaper
 	end
 	
-	log(path, wallpaper)
-	
 	if path then
 		local mode = scr.cfg.wallpaper_mode or "centered"
 		
