@@ -3,6 +3,13 @@ Completely redesigned configuration workflow for [AwesomeWM](https://github.com/
 
 &nbsp;  
 
+## Project discontinued!
+Most of it's features are still included in my personal configuration  
+You can check it out here: [adamnejm/dotfiles/awesome/](https://github.com/adamnejm/dotfiles/tree/master/.config/awesome)
+
+&nbsp;  
+&nbsp;  
+
 ## Features
   
 - **Flow system**  
